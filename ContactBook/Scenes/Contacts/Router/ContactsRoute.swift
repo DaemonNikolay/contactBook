@@ -4,7 +4,7 @@ protocol ContactsRoute {
 
 extension ContactsRoute where Self: RouterProtocol {
 	func showContacts() {
-		let transition = PushTransition(animator: FadeAnimator())
+		let transition = WindowNavigationTransition()
 		let module = ContactsModule(transition: transition)
 
 		open(module.view, transition: transition)

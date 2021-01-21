@@ -18,7 +18,15 @@ final class SplashViewModel: ViewModel, DIConfigurable {
 	// MARK: - Public methods
 	
 	func transform(input: Input) -> Output {
+		router.showContacts()
+		
 		return Output()
+	}
+	
+	// MARK: - Private methods
+	
+	private func showContacts() {
+		router.showContacts()
 	}
 }
 
