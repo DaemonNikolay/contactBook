@@ -34,6 +34,20 @@
 		731D848725B8537800C74DEC /* AlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847325B8537800C74DEC /* AlertRoute.swift */; };
 		731D848A25B8537800C74DEC /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847825B8537800C74DEC /* Animator.swift */; };
 		731D848B25B8537800C74DEC /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847925B8537800C74DEC /* FadeAnimator.swift */; };
+		73CF9E9725B93E56005B7B12 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */; };
+		73CF9E9825B93E56005B7B12 /* ContactsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E9025B93E56005B7B12 /* ContactsModule.swift */; };
+		73CF9E9925B93E56005B7B12 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E9225B93E56005B7B12 /* ContactsViewController.swift */; };
+		73CF9E9A25B93E56005B7B12 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF9E9325B93E56005B7B12 /* ContactsViewController.xib */; };
+		73CF9E9B25B93E56005B7B12 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E9525B93E56005B7B12 /* ContactsRouter.swift */; };
+		73CF9E9C25B93E56005B7B12 /* ContactsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E9625B93E56005B7B12 /* ContactsRoute.swift */; };
+		73CF9EAC25B93E78005B7B12 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EA425B93E78005B7B12 /* DetailViewModel.swift */; };
+		73CF9EAD25B93E78005B7B12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EA625B93E78005B7B12 /* DetailViewController.swift */; };
+		73CF9EAE25B93E78005B7B12 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF9EA725B93E78005B7B12 /* DetailViewController.xib */; };
+		73CF9EAF25B93E78005B7B12 /* DetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EA825B93E78005B7B12 /* DetailModule.swift */; };
+		73CF9EB025B93E78005B7B12 /* DetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EAA25B93E78005B7B12 /* DetailRoute.swift */; };
+		73CF9EB125B93E78005B7B12 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EAB25B93E78005B7B12 /* DetailRouter.swift */; };
+		73CF9EB725B93F22005B7B12 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9EB625B93F22005B7B12 /* ContactCell.swift */; };
+		73CF9EBA25B93F3B005B7B12 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF9EB925B93F3B005B7B12 /* ContactCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +79,20 @@
 		731D847325B8537800C74DEC /* AlertRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRoute.swift; sourceTree = "<group>"; };
 		731D847825B8537800C74DEC /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		731D847925B8537800C74DEC /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		73CF9E9025B93E56005B7B12 /* ContactsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModule.swift; sourceTree = "<group>"; };
+		73CF9E9225B93E56005B7B12 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		73CF9E9325B93E56005B7B12 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		73CF9E9525B93E56005B7B12 /* ContactsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
+		73CF9E9625B93E56005B7B12 /* ContactsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRoute.swift; sourceTree = "<group>"; };
+		73CF9EA425B93E78005B7B12 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		73CF9EA625B93E78005B7B12 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		73CF9EA725B93E78005B7B12 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		73CF9EA825B93E78005B7B12 /* DetailModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModule.swift; sourceTree = "<group>"; };
+		73CF9EAA25B93E78005B7B12 /* DetailRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRoute.swift; sourceTree = "<group>"; };
+		73CF9EAB25B93E78005B7B12 /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		73CF9EB625B93F22005B7B12 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		73CF9EB925B93F3B005B7B12 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		8C92B9E65E86229BBC69F24D /* Pods-ContactBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactBook.release.xcconfig"; path = "Target Support Files/Pods-ContactBook/Pods-ContactBook.release.xcconfig"; sourceTree = "<group>"; };
 		98830025897FBE5981A799F6 /* Pods-ContactBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactBook.debug.xcconfig"; path = "Target Support Files/Pods-ContactBook/Pods-ContactBook.debug.xcconfig"; sourceTree = "<group>"; };
 		B03991D25CDD77E7E5B5C987 /* Pods_ContactBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +188,8 @@
 		731D841B25B852CD00C74DEC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				73CF9EA225B93E78005B7B12 /* Detail */,
+				73CF9E8D25B93E56005B7B12 /* Contacts */,
 				731D841F25B8532900C74DEC /* Splash */,
 			);
 			path = Scenes;
@@ -271,6 +301,90 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		73CF9E8D25B93E56005B7B12 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9E9025B93E56005B7B12 /* ContactsModule.swift */,
+				73CF9E8E25B93E56005B7B12 /* ViewModel */,
+				73CF9E9125B93E56005B7B12 /* View */,
+				73CF9E9425B93E56005B7B12 /* Router */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		73CF9E8E25B93E56005B7B12 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73CF9E9125B93E56005B7B12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EB525B93F11005B7B12 /* ContactCell */,
+				73CF9E9225B93E56005B7B12 /* ContactsViewController.swift */,
+				73CF9E9325B93E56005B7B12 /* ContactsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73CF9E9425B93E56005B7B12 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9E9525B93E56005B7B12 /* ContactsRouter.swift */,
+				73CF9E9625B93E56005B7B12 /* ContactsRoute.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		73CF9EA225B93E78005B7B12 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EA825B93E78005B7B12 /* DetailModule.swift */,
+				73CF9EA325B93E78005B7B12 /* ViewModel */,
+				73CF9EA525B93E78005B7B12 /* View */,
+				73CF9EA925B93E78005B7B12 /* Router */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		73CF9EA325B93E78005B7B12 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EA425B93E78005B7B12 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73CF9EA525B93E78005B7B12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EA625B93E78005B7B12 /* DetailViewController.swift */,
+				73CF9EA725B93E78005B7B12 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73CF9EA925B93E78005B7B12 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EAA25B93E78005B7B12 /* DetailRoute.swift */,
+				73CF9EAB25B93E78005B7B12 /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		73CF9EB525B93F11005B7B12 /* ContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				73CF9EB625B93F22005B7B12 /* ContactCell.swift */,
+				73CF9EB925B93F3B005B7B12 /* ContactCell.xib */,
+			);
+			path = ContactCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,9 +444,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CF9EBA25B93F3B005B7B12 /* ContactCell.xib in Resources */,
+				73CF9EAE25B93E78005B7B12 /* DetailViewController.xib in Resources */,
 				731D840925B8523D00C74DEC /* LaunchScreen.storyboard in Resources */,
 				731D840625B8523D00C74DEC /* Assets.xcassets in Resources */,
 				731D842B25B8532900C74DEC /* SplashViewController.xib in Resources */,
+				73CF9E9A25B93E56005B7B12 /* ContactsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +503,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				731D848625B8537800C74DEC /* WindowTransition.swift in Sources */,
+				73CF9E9925B93E56005B7B12 /* ContactsViewController.swift in Sources */,
+				73CF9EAC25B93E78005B7B12 /* DetailViewModel.swift in Sources */,
 				731D848425B8537800C74DEC /* Transition.swift in Sources */,
+				73CF9EAF25B93E78005B7B12 /* DetailModule.swift in Sources */,
 				731D848525B8537800C74DEC /* PushTransition.swift in Sources */,
 				731D847B25B8537800C74DEC /* TimeInterval+Ext.swift in Sources */,
 				731D848325B8537800C74DEC /* ModalNavigationTransition.swift in Sources */,
@@ -394,10 +514,17 @@
 				731D848125B8537800C74DEC /* WindowNavigationTransition.swift in Sources */,
 				731D848725B8537800C74DEC /* AlertRoute.swift in Sources */,
 				731D847A25B8537800C74DEC /* CALayer+Ext.swift in Sources */,
+				73CF9EB125B93E78005B7B12 /* DetailRouter.swift in Sources */,
 				731D848025B8537800C74DEC /* PopupTransition.swift in Sources */,
+				73CF9E9B25B93E56005B7B12 /* ContactsRouter.swift in Sources */,
+				73CF9EB025B93E78005B7B12 /* DetailRoute.swift in Sources */,
+				73CF9E9C25B93E56005B7B12 /* ContactsRoute.swift in Sources */,
 				731D847D25B8537800C74DEC /* DIConfigurable.swift in Sources */,
+				73CF9EB725B93F22005B7B12 /* ContactCell.swift in Sources */,
 				731D848A25B8537800C74DEC /* Animator.swift in Sources */,
 				731D842D25B8532900C74DEC /* SplashRouter.swift in Sources */,
+				73CF9E9825B93E56005B7B12 /* ContactsModule.swift in Sources */,
+				73CF9E9725B93E56005B7B12 /* ContactsViewModel.swift in Sources */,
 				731D842C25B8532900C74DEC /* SplashModule.swift in Sources */,
 				731D848B25B8537800C74DEC /* FadeAnimator.swift in Sources */,
 				731D848225B8537800C74DEC /* ModalTransition.swift in Sources */,
@@ -406,6 +533,7 @@
 				731D83FD25B8523C00C74DEC /* AppDelegate.swift in Sources */,
 				731D847C25B8537800C74DEC /* String+Ext.swift in Sources */,
 				731D847E25B8537800C74DEC /* ViewModel.swift in Sources */,
+				73CF9EAD25B93E78005B7B12 /* DetailViewController.swift in Sources */,
 				731D842A25B8532900C74DEC /* SplashViewController.swift in Sources */,
 				731D847F25B8537800C74DEC /* Router.swift in Sources */,
 			);

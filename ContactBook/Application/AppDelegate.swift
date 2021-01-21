@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		beginUserStory()
 		
 		return true
-	}
+	} 
 	
 	// MARK: - Private methods
 	
