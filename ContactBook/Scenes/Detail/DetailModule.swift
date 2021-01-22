@@ -3,10 +3,10 @@ import UIKit
 struct DetailModule {
 	let view: UIViewController
 	
-	init(transition: Transition) {
+  init(transition: Transition, contact: Contact? = nil) {
 		let router = DetailRouter()
 		
-		let viewModelContainer = DetailViewModel.Container(router: router)
+		let viewModelContainer = DetailViewModel.Container(router: router, contact: contact)
 		let viewModel = DetailViewModel(container: viewModelContainer)
 		
 		let viewContainer = DetailViewController.Container(viewModel: viewModel)

@@ -1,3 +1,3 @@
 import UIKit
 
-final class ContactsRouter: Router<ContactsViewController>, AlertRoute, ContactsRoute { }
+final class ContactsRouter: Router<ContactsViewController>, AlertRoute, DetailRoute { }

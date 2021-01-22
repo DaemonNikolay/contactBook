@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C4C710E08AD0CF481A168F7 /* Pods_ContactBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03991D25CDD77E7E5B5C987 /* Pods_ContactBook.framework */; };
+		5FE2A28B25BAABB400067080 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A28A25BAABB400067080 /* Contact.swift */; };
 		731D83FD25B8523C00C74DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D83FC25B8523C00C74DEC /* AppDelegate.swift */; };
 		731D840625B8523D00C74DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731D840525B8523D00C74DEC /* Assets.xcassets */; };
 		731D840925B8523D00C74DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D840725B8523D00C74DEC /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FE2A28A25BAABB400067080 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		731D83F925B8523C00C74DEC /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		731D83FC25B8523C00C74DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		731D840525B8523D00C74DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5FE2A28925BAAB6200067080 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2A28A25BAABB400067080 /* Contact.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		731D83F025B8523C00C74DEC = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		731D841625B8528F00C74DEC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5FE2A28925BAAB6200067080 /* Classes */,
 				731D846025B8537800C74DEC /* Extensions */,
 				731D846425B8537800C74DEC /* Protocols */,
 				731D846725B8537800C74DEC /* Routing */,
@@ -529,6 +540,7 @@
 				731D848B25B8537800C74DEC /* FadeAnimator.swift in Sources */,
 				731D848225B8537800C74DEC /* ModalTransition.swift in Sources */,
 				731D841825B852A300C74DEC /* AppRouter.swift in Sources */,
+				5FE2A28B25BAABB400067080 /* Contact.swift in Sources */,
 				731D842E25B8532900C74DEC /* SplashRoute.swift in Sources */,
 				731D83FD25B8523C00C74DEC /* AppDelegate.swift in Sources */,
 				731D847C25B8537800C74DEC /* String+Ext.swift in Sources */,
