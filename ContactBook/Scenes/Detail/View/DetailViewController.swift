@@ -28,6 +28,8 @@ class DetailViewController: UIViewController, DIConfigurable {
     save.tintColor = .black
     save.layer.borderColor = UIColor.black.cgColor
     
+    self.navigationItem.title = "rere"
+    
     setupBindigs()
 	}
 	
@@ -52,19 +54,19 @@ class DetailViewController: UIViewController, DIConfigurable {
       .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
       .asDriver(onErrorJustReturn: name.text)
     
-    let phoneNumberDriver: Driver<String?> = name.rx
+    let phoneNumberDriver: Driver<String?> = phoneNumber.rx
       .text
       .observe(on: MainScheduler.asyncInstance)
       .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
       .asDriver(onErrorJustReturn: phoneNumber.text)
     
     let saveDriver: Driver<Void> = save.rx.tap.asDriver()
-    let navItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
+    let navigationItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
     
     let input = DetailViewModel.Input(name: nameDriver,
                                       phoneNumber: phoneNumberDriver,
                                       save: saveDriver,
-                                      navigationItem: navItemDriver)
+                                      navigationItem: navigationItemDriver)
     
     let output = viewModel.transform(input: input)
     output.name.drive(name.rx.text).disposed(by: bag)

@@ -7,6 +7,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	
 	private let router: DetailRouter
 	private let bag = DisposeBag()
+  private let isNew: Bool
   
   // MARK: - Private properties
   
@@ -20,6 +21,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
     
     name = container.contact?.name
     phoneNumber = container.contact?.phoneNumber
+    isNew = name == nil
 	}
 	
 	// MARK: - Public methods
@@ -44,19 +46,12 @@ final class DetailViewModel: ViewModel, DIConfigurable {
       .disposed(by: bag)
     
     input.navigationItem.drive(onNext: { [unowned self] (navItem) in
-      guard let _ = name else {
-        navItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
-                                                      style: .done,
-                                                      target: self,
-                                                      action: #selector(addClick))
-
+      guard isNew else {
+        navItem?.title = name
         return
       }
       
-      navItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
-                                                   style: .done,
-                                                   target: self,
-                                                   action: #selector(editClick))
+      navItem?.title = "New contact"
     })
     .disposed(by: bag)
     
@@ -69,12 +64,12 @@ final class DetailViewModel: ViewModel, DIConfigurable {
   
   // MARK: - Private methods
   
-  @objc private func editClick() {
-    print("edit")
+  private func addContact() {
+    
   }
   
-  @objc private func addClick() {
-    print("add")
+  private func editContact() {
+    
   }
 }
 
