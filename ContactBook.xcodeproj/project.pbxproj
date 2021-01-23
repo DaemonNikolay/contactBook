@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C4C710E08AD0CF481A168F7 /* Pods_ContactBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03991D25CDD77E7E5B5C987 /* Pods_ContactBook.framework */; };
+		5F4AC62C25BAE106004E1E41 /* ContactDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AC62A25BAE106004E1E41 /* ContactDB.xcdatamodeld */; };
+		5F4AC62F25BAE2D4004E1E41 /* ContactsDBHabdler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AC62E25BAE2D4004E1E41 /* ContactsDBHabdler.swift */; };
 		5FE2A28B25BAABB400067080 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2A28A25BAABB400067080 /* Contact.swift */; };
 		731D83FD25B8523C00C74DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D83FC25B8523C00C74DEC /* AppDelegate.swift */; };
 		731D840625B8523D00C74DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731D840525B8523D00C74DEC /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F4AC62B25BAE106004E1E41 /* Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact.xcdatamodel; sourceTree = "<group>"; };
+		5F4AC62E25BAE2D4004E1E41 /* ContactsDBHabdler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDBHabdler.swift; sourceTree = "<group>"; };
 		5FE2A28A25BAABB400067080 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		731D83F925B8523C00C74DEC /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		731D83FC25B8523C00C74DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F4AC62925BAE0C9004E1E41 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5F4AC62A25BAE106004E1E41 /* ContactDB.xcdatamodeld */,
+				5F4AC62E25BAE2D4004E1E41 /* ContactsDBHabdler.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		5FE2A28925BAAB6200067080 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		731D83FB25B8523C00C74DEC /* ContactBook */ = {
 			isa = PBXGroup;
 			children = (
+				5F4AC62925BAE0C9004E1E41 /* Database */,
 				731D841B25B852CD00C74DEC /* Scenes */,
 				731D841625B8528F00C74DEC /* Common */,
 				731D841525B8528600C74DEC /* Application */,
@@ -521,6 +535,7 @@
 				731D848525B8537800C74DEC /* PushTransition.swift in Sources */,
 				731D847B25B8537800C74DEC /* TimeInterval+Ext.swift in Sources */,
 				731D848325B8537800C74DEC /* ModalNavigationTransition.swift in Sources */,
+				5F4AC62F25BAE2D4004E1E41 /* ContactsDBHabdler.swift in Sources */,
 				731D842925B8532900C74DEC /* SplashViewModel.swift in Sources */,
 				731D848125B8537800C74DEC /* WindowNavigationTransition.swift in Sources */,
 				731D848725B8537800C74DEC /* AlertRoute.swift in Sources */,
@@ -545,6 +560,7 @@
 				731D83FD25B8523C00C74DEC /* AppDelegate.swift in Sources */,
 				731D847C25B8537800C74DEC /* String+Ext.swift in Sources */,
 				731D847E25B8537800C74DEC /* ViewModel.swift in Sources */,
+				5F4AC62C25BAE106004E1E41 /* ContactDB.xcdatamodeld in Sources */,
 				73CF9EAD25B93E78005B7B12 /* DetailViewController.swift in Sources */,
 				731D842A25B8532900C74DEC /* SplashViewController.swift in Sources */,
 				731D847F25B8537800C74DEC /* Router.swift in Sources */,
@@ -747,6 +763,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5F4AC62A25BAE106004E1E41 /* ContactDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5F4AC62B25BAE106004E1E41 /* Contact.xcdatamodel */,
+			);
+			currentVersion = 5F4AC62B25BAE106004E1E41 /* Contact.xcdatamodel */;
+			path = ContactDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 731D83F125B8523C00C74DEC /* Project object */;
 }

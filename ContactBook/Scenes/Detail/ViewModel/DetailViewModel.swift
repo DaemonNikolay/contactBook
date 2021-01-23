@@ -42,6 +42,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
     input.save
       .drive(onNext: { [unowned self] in
         print(name, phoneNumber)
+        ContactsDBHandler.add(name: name ?? "", phoneNumber: phoneNumber ?? "")
       })
       .disposed(by: bag)
     
