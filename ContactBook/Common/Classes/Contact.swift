@@ -1,11 +1,16 @@
 import Foundation
 
 final class Contact {
-  var name: String
-  var phoneNumber: String
-  
-  init(name: String, phoneNumber: String) {
-    self.name = name
-    self.phoneNumber = phoneNumber
-  }
+	var id: UUID
+
+	var name: String
+	var phoneNumber: String
+
+	// MARK: - Initialize
+	
+	init(id: UUID, name: String, phoneNumber: String) {
+		self.id = id
+		self.name = name
+		self.phoneNumber = phoneNumber
+	}
 }

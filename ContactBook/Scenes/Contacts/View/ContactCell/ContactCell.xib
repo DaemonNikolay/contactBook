@@ -7,49 +7,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactCell" customModule="ContactBook" customModuleProvider="target">
-            <connections>
-                <outlet property="name" destination="RDA-8A-EWa" id="Jp6-TW-8mQ"/>
-                <outlet property="phoneNumber" destination="gHq-YG-wxi" id="PSY-Gv-eQG"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="FZg-dV-IRk">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="FZg-dV-IRk" customClass="ContactCell" customModule="ContactBook" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZg-dV-IRk" id="LcZ-zG-azH">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZg-dV-IRk" id="LcZ-zG-azH">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-YG-wxi" userLabel="Phone number">
-                        <rect key="frame" x="5" y="5" width="404" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="4bj-kF-5Q0"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDA-8A-EWa" userLabel="Name">
-                        <rect key="frame" x="5" y="45" width="404" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="mVo-aF-9Lh"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-uX-CLG" userLabel="Name">
+                        <rect key="frame" x="16" y="11" width="382" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-YX-rHE" userLabel="Phone number">
+                        <rect key="frame" x="16" y="49" width="382" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="RDA-8A-EWa" secondAttribute="bottom" constant="5" id="7yp-R2-OJS"/>
-                    <constraint firstAttribute="trailing" secondItem="RDA-8A-EWa" secondAttribute="trailing" constant="5" id="ENO-M2-Um7"/>
-                    <constraint firstAttribute="trailing" secondItem="gHq-YG-wxi" secondAttribute="trailing" constant="5" id="HLi-Jf-oFe"/>
-                    <constraint firstItem="gHq-YG-wxi" firstAttribute="top" secondItem="LcZ-zG-azH" secondAttribute="top" constant="5" id="Zqi-H9-M32"/>
-                    <constraint firstItem="gHq-YG-wxi" firstAttribute="leading" secondItem="LcZ-zG-azH" secondAttribute="leading" constant="5" id="jPN-UL-0P5"/>
-                    <constraint firstItem="RDA-8A-EWa" firstAttribute="top" secondItem="gHq-YG-wxi" secondAttribute="bottom" constant="5" id="kpZ-1d-AKb"/>
-                    <constraint firstItem="RDA-8A-EWa" firstAttribute="leading" secondItem="LcZ-zG-azH" secondAttribute="leading" constant="5" id="nCM-hM-bU0"/>
-                    <constraint firstItem="RDA-8A-EWa" firstAttribute="top" secondItem="gHq-YG-wxi" secondAttribute="bottom" constant="5" id="yvB-uA-opH"/>
+                    <constraint firstItem="JDu-YX-rHE" firstAttribute="top" secondItem="ON8-uX-CLG" secondAttribute="bottom" constant="10" id="2La-uh-cRI"/>
+                    <constraint firstItem="ON8-uX-CLG" firstAttribute="leading" secondItem="LcZ-zG-azH" secondAttribute="leadingMargin" id="3wt-hy-BI7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JDu-YX-rHE" secondAttribute="bottom" constant="5" id="5kg-hl-9RQ"/>
+                    <constraint firstItem="ON8-uX-CLG" firstAttribute="top" secondItem="LcZ-zG-azH" secondAttribute="topMargin" id="eXP-vr-z15"/>
+                    <constraint firstItem="JDu-YX-rHE" firstAttribute="trailing" secondItem="LcZ-zG-azH" secondAttribute="trailingMargin" id="qr3-4t-2eb"/>
+                    <constraint firstItem="ON8-uX-CLG" firstAttribute="trailing" secondItem="LcZ-zG-azH" secondAttribute="trailingMargin" id="usC-7x-4M1"/>
+                    <constraint firstItem="JDu-YX-rHE" firstAttribute="leading" secondItem="LcZ-zG-azH" secondAttribute="leadingMargin" id="z9N-kL-2iZ"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="24.637681159420293" y="-19.419642857142858"/>
+            <connections>
+                <outlet property="name" destination="ON8-uX-CLG" id="ODL-NQ-YGN"/>
+                <outlet property="phoneNumber" destination="JDu-YX-rHE" id="1ki-Pl-mvl"/>
+            </connections>
+            <point key="canvasLocation" x="24.375" y="-20.070422535211268"/>
         </tableViewCell>
     </objects>
 </document>

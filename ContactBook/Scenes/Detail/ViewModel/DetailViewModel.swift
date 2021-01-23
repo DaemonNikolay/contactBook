@@ -41,8 +41,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
     
     input.save
       .drive(onNext: { [unowned self] in
-        print(name, phoneNumber)
-        ContactsDBHandler.add(name: name ?? "", phoneNumber: phoneNumber ?? "")
+				addContact(name: name, phoneNumber: phoneNumber)
       })
       .disposed(by: bag)
     
@@ -65,8 +64,10 @@ final class DetailViewModel: ViewModel, DIConfigurable {
   
   // MARK: - Private methods
   
-  private func addContact() {
-    
+	private func addContact(name: String?, phoneNumber: String?) {
+		guard let name = name, let phoneNumber = phoneNumber else { return }
+		
+		ContactsDBHandler.add(name: name, phoneNumber: phoneNumber)
   }
   
   private func editContact() {

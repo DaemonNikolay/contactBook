@@ -26,6 +26,7 @@ final class ContactsViewModel: ViewModel, DIConfigurable {
       guard let tableView = tableView else { return }
       
       setupTable(tableView)
+			initDataSource()
     })
     .disposed(by: bag)
     
@@ -42,21 +43,51 @@ final class ContactsViewModel: ViewModel, DIConfigurable {
 	}
   
   // MARK: - Private methods
+	
+	private func initDataSource() {
+		guard let contactsDB = ContactsDBHandler.all() else { return }
+
+		var contacts: [Contact] = .init()
+		contactsDB.forEach { contactDB in
+			guard let contactId = contactDB.id,
+						let name = contactDB.name,
+						let phoneNumber = contactDB.phoneNumber else { return }
+			
+			contacts.append(.init(id: contactId,
+														name: name,
+														phoneNumber: phoneNumber))
+		}
+		
+		dataSource.accept(contacts)
+	}
   
   private func setupTable(_ tableView: UITableView) {
+		tableView.register(UINib(nibName: ContactCell.reuseIdentifier, bundle: nil),
+											 forCellReuseIdentifier: ContactCell.reuseIdentifier)
+		
     dataSource.bind(to: tableView.rx.items(cellIdentifier: ContactCell.reuseIdentifier,
-                                           cellType: ContactCell.self)) { _, record, cell in
-      cell.setup(phoneNumber: record.phoneNumber,
-                 name: record.name)
+                                           cellType: ContactCell.self)) { _, contact, cell in
+
+			cell.setup(contactId: contact.id,
+								 phoneNumber: contact.phoneNumber,
+								 name: contact.name)
     }
     .disposed(by: bag)
     
     tableView.rx
       .modelSelected(Contact.self)
       .subscribe(onNext: { [unowned self] (contact) in
-        showDetail(contact)
+				showDetail(contact)
       })
       .disposed(by: bag)
+		
+		tableView.rx
+			.modelDeleted(ContactCell.self)
+			.subscribe(onNext: { cell in
+				print("Remove: \(cell.name)")
+				
+			})
+			.disposed(by: bag)
   }
   
   private func showDetail(_ contact: Contact) {
