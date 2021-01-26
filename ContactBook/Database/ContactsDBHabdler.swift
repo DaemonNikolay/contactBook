@@ -20,9 +20,11 @@ final class ContactsDBHandler {
 	
 	static func update(id: UUID, name: String? = nil, phoneNumber: String? = nil) {
 		let request: NSFetchRequest = ContactDB.fetchRequest()
-		request.predicate = NSPredicate(format: "id = %@", [id.description])
+	
+		let contactId: String = id.description
+		request.predicate = NSPredicate(format: "id = %@", contactId)
 		
-		guard let contact = try? context.fetch(request)[0] else { return }
+		guard let contact = try? context.fetch(request).first else { return }
 		
 		if let name = name {
 			contact.name = name
@@ -44,6 +46,8 @@ final class ContactsDBHandler {
 		context.delete(contact)
 		try? context.save()
 	}
+	
+	// MARK: - Private properties
 	
 	private static var context: NSManagedObjectContext {
 		let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +12,6 @@
             <connections>
                 <outlet property="name" destination="iXB-Qd-IxB" id="1Oz-0R-KKT"/>
                 <outlet property="phoneNumber" destination="dxH-yW-WLo" id="xW4-Kc-ned"/>
-                <outlet property="save" destination="J4j-Az-Zdh" id="zUs-6B-W9f"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HoB-KX-3Iz"/>
             </connections>
         </placeholder>
@@ -77,20 +75,10 @@
                         <constraint firstAttribute="trailing" secondItem="dxH-yW-WLo" secondAttribute="trailing" constant="5" id="yHK-5x-rNb"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4j-Az-Zdh">
-                    <rect key="frame" x="274" y="254" width="120" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="Rbb-l7-nfd"/>
-                        <constraint firstAttribute="height" constant="40" id="akE-RF-c6a"/>
-                    </constraints>
-                    <state key="normal" title="Save"/>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="J4j-Az-Zdh" secondAttribute="trailing" constant="20" id="3ph-QQ-6GN"/>
-                <constraint firstItem="J4j-Az-Zdh" firstAttribute="top" secondItem="phg-A5-prL" secondAttribute="bottom" constant="40" id="AXF-4m-O1g"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="phg-A5-prL" secondAttribute="trailing" constant="20" id="DlL-Vw-1Yf"/>
                 <constraint firstItem="phg-A5-prL" firstAttribute="top" secondItem="qpk-A2-gZg" secondAttribute="bottom" constant="10" id="Lac-Nc-KDP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qpk-A2-gZg" secondAttribute="trailing" constant="20" id="NOh-rE-mKg"/>

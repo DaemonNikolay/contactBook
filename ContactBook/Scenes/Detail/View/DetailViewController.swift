@@ -8,8 +8,6 @@ class DetailViewController: UIViewController, DIConfigurable {
 	
 	@IBOutlet var name: UITextField!
 	@IBOutlet var phoneNumber: UITextField!
-	
-	@IBOutlet var save: UIButton!
   
   // MARK: - Private constants
   
@@ -23,13 +21,6 @@ class DetailViewController: UIViewController, DIConfigurable {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-    
-    save.layer.borderWidth = 1
-    save.layer.cornerRadius = 5
-    save.tintColor = .black
-    save.layer.borderColor = UIColor.black.cgColor
-    
-    self.navigationItem.title = "rere"
     
     setupBindigs()
 	}
@@ -49,29 +40,15 @@ class DetailViewController: UIViewController, DIConfigurable {
   // MARK: - Private methods
   
   private func setupBindigs() {
-    let nameDriver: Driver<String?> = name.rx
-      .text
-      .observe(on: MainScheduler.asyncInstance)
-      .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
-      .asDriver(onErrorJustReturn: name.text)
+		let navigationItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
+		let nameDriver: Driver<UITextField?> = Driver.just(name)
+		let phoneNumberDriver: Driver<UITextField?> = Driver.just(phoneNumber)
     
-    let phoneNumberDriver: Driver<String?> = phoneNumber.rx
-      .text
-      .observe(on: MainScheduler.asyncInstance)
-      .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
-      .asDriver(onErrorJustReturn: phoneNumber.text)
+		let input = DetailViewModel.Input(navigationItem: navigationItemDriver,
+																			name: nameDriver,
+																			phoneNumber: phoneNumberDriver)
     
-    let saveDriver: Driver<Void> = save.rx.tap.asDriver()
-    let navigationItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
-    
-    let input = DetailViewModel.Input(name: nameDriver,
-                                      phoneNumber: phoneNumberDriver,
-                                      save: saveDriver,
-                                      navigationItem: navigationItemDriver)
-    
-    let output = viewModel.transform(input: input)
-    output.name.drive(name.rx.text).disposed(by: bag)
-    output.phoneNumber.drive(phoneNumber.rx.text).disposed(by: bag)
+    _ = viewModel.transform(input: input)
   }
 }
 

@@ -13,4 +13,10 @@ final class Contact {
 		self.name = name
 		self.phoneNumber = phoneNumber
 	}
+	
+	init() {
+		self.id = .init()
+		self.name = .init()
+		self.phoneNumber = .init()
+	}
 }
