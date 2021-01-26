@@ -4,7 +4,7 @@ protocol SplashRoute {
 
 extension SplashRoute where Self: RouterProtocol {
 	func showSplash() {
-		let transition = WindowTransition()
+		let transition = WindowNavigationTransition()
 		let module = SplashModule(transition: transition)
 
 		open(module.view, transition: transition)

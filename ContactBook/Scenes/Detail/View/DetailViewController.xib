@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="ContactBook" customModuleProvider="target">
+            <connections>
+                <outlet property="birthdayDate" destination="XTS-fh-CfB" id="SMg-mL-gNO"/>
+                <outlet property="name" destination="iXB-Qd-IxB" id="1Oz-0R-KKT"/>
+                <outlet property="phoneNumber" destination="dxH-yW-WLo" id="xW4-Kc-ned"/>
+                <outlet property="view" destination="iN0-l3-epB" id="HoB-KX-3Iz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpk-A2-gZg" userLabel="Name box">
+                    <rect key="frame" x="20" y="64" width="374" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Yv-njx">
+                            <rect key="frame" x="5" y="5" width="364" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXB-Qd-IxB">
+                            <rect key="frame" x="5" y="31" width="364" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5pZ-Yv-njx" secondAttribute="trailing" constant="5" id="CAt-eS-7Yz"/>
+                        <constraint firstItem="iXB-Qd-IxB" firstAttribute="top" secondItem="5pZ-Yv-njx" secondAttribute="bottom" constant="5" id="WR9-fT-i9D"/>
+                        <constraint firstItem="iXB-Qd-IxB" firstAttribute="leading" secondItem="qpk-A2-gZg" secondAttribute="leading" constant="5" id="Wrx-Qc-CM9"/>
+                        <constraint firstItem="5pZ-Yv-njx" firstAttribute="leading" secondItem="qpk-A2-gZg" secondAttribute="leading" constant="5" id="lhc-O8-MBs"/>
+                        <constraint firstAttribute="trailing" secondItem="iXB-Qd-IxB" secondAttribute="trailing" constant="5" id="mp2-WD-Hj3"/>
+                        <constraint firstAttribute="bottom" secondItem="iXB-Qd-IxB" secondAttribute="bottom" constant="5" id="qXG-i2-eLE"/>
+                        <constraint firstItem="5pZ-Yv-njx" firstAttribute="top" secondItem="qpk-A2-gZg" secondAttribute="top" constant="5" id="xGH-M9-3Pf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phg-A5-prL" userLabel="Phone box">
+                    <rect key="frame" x="20" y="144" width="374" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skW-NU-YP7">
+                            <rect key="frame" x="5" y="5" width="364" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxH-yW-WLo">
+                            <rect key="frame" x="5" y="31" width="364" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="tel"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="dxH-yW-WLo" firstAttribute="top" secondItem="skW-NU-YP7" secondAttribute="bottom" constant="5" id="AxJ-Wn-JXO"/>
+                        <constraint firstItem="dxH-yW-WLo" firstAttribute="leading" secondItem="phg-A5-prL" secondAttribute="leading" constant="5" id="BEq-Og-URa"/>
+                        <constraint firstItem="skW-NU-YP7" firstAttribute="leading" secondItem="phg-A5-prL" secondAttribute="leading" constant="5" id="I2I-jR-U94"/>
+                        <constraint firstItem="dxH-yW-WLo" firstAttribute="leading" secondItem="phg-A5-prL" secondAttribute="leading" constant="5" id="Wj0-Jy-otg"/>
+                        <constraint firstAttribute="trailing" secondItem="dxH-yW-WLo" secondAttribute="trailing" constant="5" id="bf6-Fr-VZO"/>
+                        <constraint firstAttribute="trailing" secondItem="skW-NU-YP7" secondAttribute="trailing" constant="5" id="bwA-ut-i7E"/>
+                        <constraint firstAttribute="bottom" secondItem="dxH-yW-WLo" secondAttribute="bottom" constant="5" id="sXB-WK-Ff5"/>
+                        <constraint firstItem="skW-NU-YP7" firstAttribute="top" secondItem="phg-A5-prL" secondAttribute="top" constant="5" id="uOL-jv-IYe"/>
+                        <constraint firstAttribute="trailing" secondItem="dxH-yW-WLo" secondAttribute="trailing" constant="5" id="yHK-5x-rNb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-6p-eO7" userLabel="Birthday date box">
+                    <rect key="frame" x="20" y="224" width="374" height="252"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="To8-LY-MOR">
+                            <rect key="frame" x="5" y="5" width="364" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="XTS-fh-CfB" userLabel="Birthday date picker">
+                            <rect key="frame" x="5" y="31" width="364" height="216"/>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="XTS-fh-CfB" firstAttribute="leading" secondItem="lCe-6p-eO7" secondAttribute="leading" constant="5" id="1wW-eV-BXM"/>
+                        <constraint firstItem="XTS-fh-CfB" firstAttribute="top" secondItem="To8-LY-MOR" secondAttribute="bottom" constant="5" id="67t-tY-15w"/>
+                        <constraint firstAttribute="trailing" secondItem="To8-LY-MOR" secondAttribute="trailing" constant="5" id="7Wa-42-2oV"/>
+                        <constraint firstItem="To8-LY-MOR" firstAttribute="leading" secondItem="lCe-6p-eO7" secondAttribute="leading" constant="5" id="9Hq-hr-PQJ"/>
+                        <constraint firstAttribute="trailing" secondItem="XTS-fh-CfB" secondAttribute="trailing" constant="5" id="I0u-wg-yK7"/>
+                        <constraint firstAttribute="bottom" secondItem="XTS-fh-CfB" secondAttribute="bottom" constant="5" id="P2H-EF-8Hk"/>
+                        <constraint firstItem="To8-LY-MOR" firstAttribute="top" secondItem="lCe-6p-eO7" secondAttribute="top" constant="5" id="Ui4-35-rpa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="phg-A5-prL" secondAttribute="trailing" constant="20" id="DlL-Vw-1Yf"/>
+                <constraint firstItem="phg-A5-prL" firstAttribute="top" secondItem="qpk-A2-gZg" secondAttribute="bottom" constant="10" id="Lac-Nc-KDP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qpk-A2-gZg" secondAttribute="trailing" constant="20" id="NOh-rE-mKg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lCe-6p-eO7" secondAttribute="trailing" constant="20" id="YHF-tC-tZe"/>
+                <constraint firstItem="lCe-6p-eO7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ZWw-wA-vqR"/>
+                <constraint firstItem="qpk-A2-gZg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="b4q-dX-wvV"/>
+                <constraint firstItem="lCe-6p-eO7" firstAttribute="top" secondItem="phg-A5-prL" secondAttribute="bottom" constant="10" id="g6s-eH-kpu"/>
+                <constraint firstItem="phg-A5-prL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="oq8-cm-LCB"/>
+                <constraint firstItem="qpk-A2-gZg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pgP-jh-Zh6"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
