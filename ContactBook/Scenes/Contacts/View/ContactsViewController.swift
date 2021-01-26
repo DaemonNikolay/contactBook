@@ -24,6 +24,9 @@ class ContactsViewController: UIViewController, DIConfigurable {
 		
 		navigationController?.setNavigationBarHidden(false, animated: animated)
     navigationController?.navigationBar.topItem?.title = "Contacts"
+		
+		// TODO: придумать как обновлять таблицу через rx
+		contactsList.reloadData()
 	}
 
 	// MARK: - Public methods
