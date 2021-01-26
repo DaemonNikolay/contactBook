@@ -24,9 +24,6 @@ class ContactsViewController: UIViewController, DIConfigurable {
 		
 		navigationController?.setNavigationBarHidden(false, animated: animated)
     navigationController?.navigationBar.topItem?.title = "Contacts"
-		
-		// TODO: придумать как обновлять таблицу через rx
-		contactsList.reloadData()
 	}
 
 	// MARK: - Public methods
@@ -40,7 +37,7 @@ class ContactsViewController: UIViewController, DIConfigurable {
   private func setupBindings() {
     let tableViewDriver: Driver<UITableView?> = .just(contactsList)
     let navItem: Driver<UINavigationItem?> = .just(navigationItem)
-    
+		
     let input = ContactsViewModel.Input(tableView: tableViewDriver,
                                         navItem: navItem)
     

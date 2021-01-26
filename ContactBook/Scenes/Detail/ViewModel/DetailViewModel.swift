@@ -28,6 +28,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	private var navItem: UINavigationItem?
 	private var nameField: UITextField?
 	private var phoneNumberField: UITextField?
+	private var birthdayDatePicker: UIDatePicker?
 	
 	// MARK: - Lifecycle
 	
@@ -90,11 +91,35 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 		})
 		.disposed(by: bag)
 		
+		input.birthdayDate.drive(onNext: { [unowned self] (datePicker) in
+			guard let datePicker = datePicker else { return }
+			
+			birthdayDatePicker = datePicker
+			
+			switch mode.value {
+			case .read:
+				datePicker.isEnabled = false
+				datePicker.date = dateFromTimestamp(contact?.birthdayDate)
+			case .edit:
+				datePicker.date = dateFromTimestamp(contact?.birthdayDate)
+			default: break
+			}
+			
+			datePicker.rx.date
+				.subscribe(onNext: { date in
+					contact?.birthdayDate = Int64(date.timeIntervalSince1970)
+				})
+				.disposed(by: bag)
+		})
+		.disposed(by: bag)
+		
 		mode.subscribe(onNext: { [unowned self] (mode) in
 			switch mode {
 			case .edit:
 				nameField?.isEnabled = true
 				phoneNumberField?.isEnabled = true
+				birthdayDatePicker?.isEnabled = true
+				
 				navItem?.rightBarButtonItem = saveButtonItem
 				
 			default: break
@@ -114,14 +139,26 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	@objc private func saveContactAction() {
 		switch mode.value {
 		case .add:
-			addContact(name: contact?.name, phoneNumber: contact?.phoneNumber)
+			addContact(name: contact?.name,
+								 phoneNumber: contact?.phoneNumber,
+								 birthdayDate: contact?.birthdayDate)
 		case .edit:
-			editContact(id: contact?.id, name: contact?.name, phoneNumber: contact?.phoneNumber)
+			editContact(id: contact?.id,
+									name: contact?.name,
+									phoneNumber: contact?.phoneNumber,
+									birthdayDate: contact?.birthdayDate)
 		default: break
 		}
+		
+		NotificationCenter.default.post(.init(name: .reloadTable))
+		router.close()
 	}
 	
 	// MARK: - Private methods
+	
+	private func dateFromTimestamp(_ timestamp: Int64?) -> Date {
+		Date(timeIntervalSince1970: TimeInterval(timestamp ?? .zero))
+	}
 	
 	private func settingTextField(textField: inout UITextField, content: String?) {
 		switch mode.value {
@@ -134,16 +171,25 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 		}
 	}
 	
-	private func addContact(name: String?, phoneNumber: String?) {
-		guard let name = name, let phoneNumber = phoneNumber else { return }
+	private func addContact(name: String?, phoneNumber: String?, birthdayDate: Int64?) {
+		guard let name = name,
+					let phoneNumber = phoneNumber,
+					let birthdayDate = birthdayDate else { return }
 		
-		ContactsDBHandler.add(name: name, phoneNumber: phoneNumber)
+		ContactsDBHandler.add(name: name, phoneNumber: phoneNumber, birthdayDate: birthdayDate)
 	}
 	
-	private func editContact(id: UUID?, name: String? = nil, phoneNumber: String? = nil) {
+	private func editContact(id: UUID?,
+													 name: String? = nil,
+													 phoneNumber: String? = nil,
+													 birthdayDate: Int64? = nil) {
+		
 		guard let contactId = id else { return }
 		
-		ContactsDBHandler.update(id: contactId, name: name, phoneNumber: phoneNumber)
+		ContactsDBHandler.update(id: contactId,
+														 name: name,
+														 phoneNumber: phoneNumber,
+														 birthdayDate: birthdayDate)
 	}
 }
 
@@ -154,6 +200,7 @@ extension DetailViewModel {
 		let navigationItem: Driver<UINavigationItem?>
 		let name: Driver<UITextField?>
 		let phoneNumber: Driver<UITextField?>
+		let birthdayDate: Driver<UIDatePicker?>
 	}
 	
 	struct Output {	}

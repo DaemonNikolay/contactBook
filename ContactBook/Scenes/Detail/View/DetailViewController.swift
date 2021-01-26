@@ -8,7 +8,9 @@ class DetailViewController: UIViewController, DIConfigurable {
 	
 	@IBOutlet var name: UITextField!
 	@IBOutlet var phoneNumber: UITextField!
-  
+	
+	@IBOutlet var birthdayDate: UIDatePicker!
+	
   // MARK: - Private constants
   
   private let bag = DisposeBag()
@@ -43,10 +45,12 @@ class DetailViewController: UIViewController, DIConfigurable {
 		let navigationItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
 		let nameDriver: Driver<UITextField?> = Driver.just(name)
 		let phoneNumberDriver: Driver<UITextField?> = Driver.just(phoneNumber)
-    
+		let birthdayDateDriver: Driver<UIDatePicker?> = Driver.just(birthdayDate)
+		
 		let input = DetailViewModel.Input(navigationItem: navigationItemDriver,
 																			name: nameDriver,
-																			phoneNumber: phoneNumberDriver)
+																			phoneNumber: phoneNumberDriver,
+																			birthdayDate: birthdayDateDriver)
     
     _ = viewModel.transform(input: input)
   }

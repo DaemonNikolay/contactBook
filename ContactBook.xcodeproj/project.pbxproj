@@ -84,6 +84,7 @@
 		731D847325B8537800C74DEC /* AlertRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRoute.swift; sourceTree = "<group>"; };
 		731D847825B8537800C74DEC /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		731D847925B8537800C74DEC /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		7346EAEF25C01B6300048B2E /* Contact_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact_v2.xcdatamodel; sourceTree = "<group>"; };
 		739D7B6825BCDC1E00E0773B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		73CF9E9025B93E56005B7B12 /* ContactsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModule.swift; sourceTree = "<group>"; };
@@ -768,9 +769,10 @@
 		5F4AC62A25BAE106004E1E41 /* ContactDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7346EAEF25C01B6300048B2E /* Contact_v2.xcdatamodel */,
 				5F4AC62B25BAE106004E1E41 /* Contact.xcdatamodel */,
 			);
-			currentVersion = 5F4AC62B25BAE106004E1E41 /* Contact.xcdatamodel */;
+			currentVersion = 7346EAEF25C01B6300048B2E /* Contact_v2.xcdatamodel */;
 			path = ContactDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
