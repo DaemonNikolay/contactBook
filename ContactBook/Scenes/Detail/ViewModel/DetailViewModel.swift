@@ -30,6 +30,8 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	private var phoneNumberField: UITextField?
 	private var birthdayDatePicker: UIDatePicker?
 	
+	private var alert: BehaviorRelay<UIAlertController?> = .init(value: nil)
+	
 	// MARK: - Lifecycle
 	
 	init(container: Container) {
@@ -127,7 +129,9 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 		})
 		.disposed(by: bag)
 		
-		return Output()
+		let alertDriver: Driver<UIAlertController?> = alert.asDriver()
+		
+		return Output(showAlert: alertDriver)
 	}
 	
 	// MARK: - Actions
@@ -139,9 +143,19 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	@objc private func saveContactAction() {
 		switch mode.value {
 		case .add:
-			addContact(name: contact?.name,
-								 phoneNumber: contact?.phoneNumber,
-								 birthdayDate: contact?.birthdayDate)
+			guard let name = trim(contact?.name),
+						let phoneNumber = trim(contact?.phoneNumber),
+						let birthdayDate = contact?.birthdayDate,
+						!name.isEmpty,
+						!phoneNumber.isEmpty else {
+				
+				alert.accept(createAlert(title: "Saving", message: "Fields has be not empty."))
+				return
+			}
+			
+			addContact(name: name,
+								 phoneNumber: phoneNumber,
+								 birthdayDate: birthdayDate)
 		case .edit:
 			editContact(id: contact?.id,
 									name: contact?.name,
@@ -155,6 +169,19 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	}
 	
 	// MARK: - Private methods
+	
+	private func trim(_ content: String?) -> String? {
+		guard let content = content else { return nil }
+		
+		return content.trimmingCharacters(in: .whitespacesAndNewlines)
+	}
+	
+	private func createAlert(title: String, message: String) -> UIAlertController {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Ok", style: .default))
+		
+		return alert
+	}
 	
 	private func dateFromTimestamp(_ timestamp: Int64?) -> Date {
 		Date(timeIntervalSince1970: TimeInterval(timestamp ?? .zero))
@@ -171,11 +198,7 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 		}
 	}
 	
-	private func addContact(name: String?, phoneNumber: String?, birthdayDate: Int64?) {
-		guard let name = name,
-					let phoneNumber = phoneNumber,
-					let birthdayDate = birthdayDate else { return }
-		
+	private func addContact(name: String, phoneNumber: String, birthdayDate: Int64) {
 		ContactsDBHandler.add(name: name, phoneNumber: phoneNumber, birthdayDate: birthdayDate)
 	}
 	
@@ -203,7 +226,9 @@ extension DetailViewModel {
 		let birthdayDate: Driver<UIDatePicker?>
 	}
 	
-	struct Output {	}
+	struct Output {
+		let showAlert: Driver<UIAlertController?>
+	}
 	
 	struct Container {
 		let router: DetailRouter

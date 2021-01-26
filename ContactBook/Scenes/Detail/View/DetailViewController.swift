@@ -4,6 +4,7 @@ import RxSwift
 import CoreData
 
 class DetailViewController: UIViewController, DIConfigurable {
+	
 	// MARK: - Outlets
 	
 	@IBOutlet var name: UITextField!
@@ -40,7 +41,7 @@ class DetailViewController: UIViewController, DIConfigurable {
 	}
   
   // MARK: - Private methods
-  
+	
   private func setupBindigs() {
 		let navigationItemDriver: Driver<UINavigationItem?> = Driver.just(navigationItem)
 		let nameDriver: Driver<UITextField?> = Driver.just(name)
@@ -52,7 +53,14 @@ class DetailViewController: UIViewController, DIConfigurable {
 																			phoneNumber: phoneNumberDriver,
 																			birthdayDate: birthdayDateDriver)
     
-    _ = viewModel.transform(input: input)
+    let output = viewModel.transform(input: input)
+		
+		output.showAlert.drive(onNext: { [unowned self] (alert) in
+			guard let alert = alert else { return }
+			
+			present(alert, animated: true)
+		})
+		.disposed(by: bag)
   }
 }
 

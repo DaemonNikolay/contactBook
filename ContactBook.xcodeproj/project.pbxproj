@@ -36,6 +36,7 @@
 		731D848725B8537800C74DEC /* AlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847325B8537800C74DEC /* AlertRoute.swift */; };
 		731D848A25B8537800C74DEC /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847825B8537800C74DEC /* Animator.swift */; };
 		731D848B25B8537800C74DEC /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D847925B8537800C74DEC /* FadeAnimator.swift */; };
+		7346EAFB25C0442B00048B2E /* NotificationName+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7346EAFA25C0442B00048B2E /* NotificationName+Ext.swift */; };
 		739D7B6925BCDC1E00E0773B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D7B6825BCDC1E00E0773B /* Contact.swift */; };
 		73CF9E9725B93E56005B7B12 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */; };
 		73CF9E9825B93E56005B7B12 /* ContactsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF9E9025B93E56005B7B12 /* ContactsModule.swift */; };
@@ -85,6 +86,7 @@
 		731D847825B8537800C74DEC /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		731D847925B8537800C74DEC /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		7346EAEF25C01B6300048B2E /* Contact_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact_v2.xcdatamodel; sourceTree = "<group>"; };
+		7346EAFA25C0442B00048B2E /* NotificationName+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Ext.swift"; sourceTree = "<group>"; };
 		739D7B6825BCDC1E00E0773B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		73CF9E8F25B93E56005B7B12 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		73CF9E9025B93E56005B7B12 /* ContactsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModule.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				731D846125B8537800C74DEC /* CALayer+Ext.swift */,
 				731D846225B8537800C74DEC /* TimeInterval+Ext.swift */,
 				731D846325B8537800C74DEC /* String+Ext.swift */,
+				7346EAFA25C0442B00048B2E /* NotificationName+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				731D848025B8537800C74DEC /* PopupTransition.swift in Sources */,
 				73CF9E9B25B93E56005B7B12 /* ContactsRouter.swift in Sources */,
 				73CF9EB025B93E78005B7B12 /* DetailRoute.swift in Sources */,
+				7346EAFB25C0442B00048B2E /* NotificationName+Ext.swift in Sources */,
 				73CF9E9C25B93E56005B7B12 /* ContactsRoute.swift in Sources */,
 				731D847D25B8537800C74DEC /* DIConfigurable.swift in Sources */,
 				73CF9EB725B93F22005B7B12 /* ContactCell.swift in Sources */,
