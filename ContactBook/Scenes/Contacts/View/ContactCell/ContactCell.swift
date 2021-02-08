@@ -3,10 +3,6 @@ import UIKit
 class ContactCell: UITableViewCell {
 	// MARK: - Outlets
 	
-//	@IBOutlet var phoneNumber: UITextField!
-//	@IBOutlet var name: UITextField!
-	
-	
 	@IBOutlet var name: UILabel!
 	@IBOutlet var phoneNumber: UILabel!
 	
