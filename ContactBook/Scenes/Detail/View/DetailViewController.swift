@@ -3,7 +3,7 @@ import RxCocoa
 import RxSwift
 import CoreData
 
-class DetailViewController: UIViewController, DIConfigurable {
+final class DetailViewController: UIViewController, DIConfigurable {
 	
 	// MARK: - Outlets
 	

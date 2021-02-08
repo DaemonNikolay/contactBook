@@ -2,7 +2,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ContactsViewController: UIViewController, DIConfigurable {
+final class ContactsViewController: UIViewController, DIConfigurable {
 	// MARK: - Outlets
 	
 	@IBOutlet var contactsList: UITableView!

@@ -1,6 +1,6 @@
 import UIKit
 
-class ContactCell: UITableViewCell {
+final class ContactCell: UITableViewCell {
 	// MARK: - Outlets
 	
 	@IBOutlet var name: UILabel!
