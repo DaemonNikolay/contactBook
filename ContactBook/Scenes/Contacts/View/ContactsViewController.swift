@@ -9,7 +9,7 @@ final class ContactsViewController: UIViewController, DIConfigurable {
 	
 	// MARK: - Public properties
 	
-	var viewModel: ContactsViewModel!
+	private var viewModel: ContactsViewModel!
 	
 	// MARK: - Lifecycle
 	

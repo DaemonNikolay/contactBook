@@ -18,7 +18,7 @@ final class DetailViewController: UIViewController, DIConfigurable {
 	
 	// MARK: - Public properties
 	
-	var viewModel: DetailViewModel!
+	private var viewModel: DetailViewModel!
 	
 	// MARK: - Lifecycle
 	
@@ -55,10 +55,10 @@ final class DetailViewController: UIViewController, DIConfigurable {
     
     let output = viewModel.transform(input: input)
 		
-		output.showAlert.drive(onNext: { [unowned self] (alert) in
-			guard let alert = alert else { return }
+		output.showAlert.drive(onNext: { [weak self] (alert) in
+			guard let alert = alert, let itSelf = self else { return }
 			
-			present(alert, animated: true)
+			itSelf.present(alert, animated: true)
 		})
 		.disposed(by: bag)
   }

@@ -31,20 +31,22 @@ final class ContactsViewModel: ViewModel, DIConfigurable {
 	// MARK: - Public methods
 	
 	func transform(input: Input) -> Output {
-		input.tableView.drive(onNext: { [unowned self] (tableView) in
-			guard let tableView = tableView else { return }
+		input.tableView.drive(onNext: { [weak self] (tableView) in
+			guard let tableView = tableView, let itSelf = self else { return }
 			
-			setupTable(tableView)
-			initDataSource()
+			itSelf.setupTable(tableView)
+			itSelf.initDataSource()
 		})
 		.disposed(by: bag)
 		
 		input.navItem
-			.drive(onNext: { [unowned self] (navItem) in
+			.drive(onNext: { [weak self] (navItem) in
+				guard let itSelf = self else { return }
+				
 				navItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
 																											style: .done,
 																											target: self,
-																											action: #selector(addContact))
+																											action: #selector(itSelf.addContact))
 			})
 			.disposed(by: bag)
 		
@@ -93,16 +95,20 @@ final class ContactsViewModel: ViewModel, DIConfigurable {
 		
 		tableView.rx
 			.modelSelected(Contact.self)
-			.subscribe(onNext: { [unowned self] (contact) in
-				showDetail(contact)
+			.subscribe(onNext: { [weak self] (contact) in
+				guard let itSelf = self else { return }
+				
+				itSelf.showDetail(contact)
 			})
 			.disposed(by: bag)
 		
 		tableView.rx
 			.modelDeleted(Contact.self)
-			.subscribe(onNext: { [unowned self] (contact) in
+			.subscribe(onNext: { [weak self] (contact) in
+				guard let itSelf = self else { return }
+				
 				ContactsDBHandler.delete(id: contact.id)
-				reloadTable()
+				itSelf.reloadTable()
 			})
 			.disposed(by: bag)
 	}

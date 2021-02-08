@@ -44,85 +44,88 @@ final class DetailViewModel: ViewModel, DIConfigurable {
 	// MARK: - Public methods
 	
 	func transform(input: Input) -> Output {
-		input.navigationItem.drive(onNext: { [unowned self] (navItem) in
-			guard let navItem = navItem else { return }
+		input.navigationItem.drive(onNext: { [weak self] (navItem) in
+			guard let navItem = navItem, let itSelf = self else { return }
 			
-			self.navItem = navItem
+			itSelf.navItem = navItem
 			
-			switch mode.value {
+			switch itSelf.mode.value {
 			case .add:
 				navItem.title = "New contact"
-				navItem.rightBarButtonItem = saveButtonItem
+				navItem.rightBarButtonItem = itSelf.saveButtonItem
 			case .edit:
-				navItem.title = contact?.name ?? "😎"
-				navItem.rightBarButtonItem = saveButtonItem
+				navItem.title = itSelf.contact?.name ?? "😎"
+				navItem.rightBarButtonItem = itSelf.saveButtonItem
 			case .read:
-				navItem.title = contact?.name ?? "😎"
-				navItem.rightBarButtonItem = editButtonItem
+				navItem.title = itSelf.contact?.name ?? "😎"
+				navItem.rightBarButtonItem = itSelf.editButtonItem
 			}
 		})
 		.disposed(by: bag)
 		
-		input.name.drive(onNext: { [unowned self] (textField) in
-			guard var textField = textField else { return }
+		input.name.drive(onNext: { [weak self] (textField) in
+			guard var textField = textField, let itSelf = self else { return }
 			
-			nameField = textField
+			itSelf.nameField = textField
 			
-			settingTextField(textField: &textField, content: contact?.name)
+			itSelf.settingTextField(textField: &textField, content: itSelf.contact?.name)
 			
-			textField.rx.text.subscribe(onNext: { [unowned self] (content) in
-				guard let content = content else { return }
-				contact?.name = content
+			textField.rx.text.subscribe(onNext: { [weak self] (content) in
+				guard let content = content, let itSelf = self else { return }
+				itSelf.contact?.name = content
 			})
-			.disposed(by: bag)
+			.disposed(by: itSelf.bag)
 		})
 		.disposed(by: bag)
 		
-		input.phoneNumber.drive(onNext: { [unowned self] (textField) in
-			guard var textField = textField else { return }
+		input.phoneNumber.drive(onNext: { [weak self] (textField) in
+			guard var textField = textField, let itSelf = self else { return }
 			
-			phoneNumberField = textField
+			itSelf.phoneNumberField = textField
 			
-			settingTextField(textField: &textField, content: contact?.phoneNumber)
+			itSelf.settingTextField(textField: &textField, content: itSelf.contact?.phoneNumber)
 			
-			textField.rx.text.subscribe(onNext: { [unowned self] (content) in
-				guard let content = content else { return }
-				contact?.phoneNumber = content
+			textField.rx.text.subscribe(onNext: { [weak self] (content) in
+				guard let content = content, let itSelf = self  else { return }
+				itSelf.contact?.phoneNumber = content
 			})
-			.disposed(by: bag)
+			.disposed(by: itSelf.bag)
 		})
 		.disposed(by: bag)
 		
-		input.birthdayDate.drive(onNext: { [unowned self] (datePicker) in
-			guard let datePicker = datePicker else { return }
+		input.birthdayDate.drive(onNext: { [weak self] (datePicker) in
+			guard let datePicker = datePicker, let itSelf = self else { return }
 			
-			birthdayDatePicker = datePicker
+			itSelf.birthdayDatePicker = datePicker
 			
-			switch mode.value {
+			switch itSelf.mode.value {
 			case .read:
 				datePicker.isEnabled = false
-				datePicker.date = dateFromTimestamp(contact?.birthdayDate)
+				datePicker.date = itSelf.dateFromTimestamp(itSelf.contact?.birthdayDate)
 			case .edit:
-				datePicker.date = dateFromTimestamp(contact?.birthdayDate)
+				datePicker.date = itSelf.dateFromTimestamp(itSelf.contact?.birthdayDate)
 			default: break
 			}
 			
 			datePicker.rx.date
-				.subscribe(onNext: { date in
-					contact?.birthdayDate = Int64(date.timeIntervalSince1970)
+				.subscribe(onNext: { [weak self] date in
+					guard let itSelf = self else { return }
+					itSelf.contact?.birthdayDate = Int64(date.timeIntervalSince1970)
 				})
-				.disposed(by: bag)
+				.disposed(by: itSelf.bag)
 		})
 		.disposed(by: bag)
 		
-		mode.subscribe(onNext: { [unowned self] (mode) in
+		mode.subscribe(onNext: { [weak self] (mode) in
+			guard let itSelf = self else { return }
+			
 			switch mode {
 			case .edit:
-				nameField?.isEnabled = true
-				phoneNumberField?.isEnabled = true
-				birthdayDatePicker?.isEnabled = true
+				itSelf.nameField?.isEnabled = true
+				itSelf.phoneNumberField?.isEnabled = true
+				itSelf.birthdayDatePicker?.isEnabled = true
 				
-				navItem?.rightBarButtonItem = saveButtonItem
+				itSelf.navItem?.rightBarButtonItem = itSelf.saveButtonItem
 				
 			default: break
 			}
